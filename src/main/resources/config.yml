@@ -1,0 +1,14 @@
+# Help:
+# Prefix: Prefix vom plugin
+# Discord: Discord Link
+# Web: Web Link
+# Yield: Explosionsradius der Feuerbälle
+# Multiplier: Geschwindigkeit der Feuerbälle
+
+prefix: '§8[§1Build§2Hub§8] §f'
+
+discord: Undefined
+web: Undefined
+
+yield: 1.0
+multiplier: 1.0
