@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 public class ServerListPingListener implements Listener {
     @EventHandler
     public void onPing(PaperServerListPingEvent event) {
-        event.setVersion("Minecraft 1.18.x");
+        event.setVersion("Minecraft 1.18.1");
 
         int players = 0;
 
