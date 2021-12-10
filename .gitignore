@@ -5,6 +5,15 @@
 *.ipr
 *.iws
 
+*.mca
+*.dat
+*.dat_old
+*.pem
+*.log.gz
+*.lock
+*.properties
+*.bat
+
 # IntelliJ
 out/
 
