@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 public class ServerListPingListener implements Listener {
     @EventHandler
     public void onPing(PaperServerListPingEvent event) {
-        event.setVersion("Minecraft 1.9.x - 1.17.x");
+        event.setVersion("Minecraft 1.18.x");
 
         int players = 0;
 
@@ -22,6 +22,6 @@ public class ServerListPingListener implements Listener {
 
         event.getPlayerSample().clear();
         event.getPlayerSample().add(new FakePlayerProfile("\u00A71\u00A7lBuild\u00A72\u00A7lHub"));
-        event.getPlayerSample().add(new FakePlayerProfile("\u00A7b\u00A7l1.9.x - 1.17.x"));
+        event.getPlayerSample().add(new FakePlayerProfile("\u00A7b\u00A7l1.18.x"));
     }
 }
