@@ -13,6 +13,7 @@
 *.lock
 *.properties
 *.bat
+*.mcmeta
 
 # IntelliJ
 out/
