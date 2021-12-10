@@ -29,6 +29,7 @@ public final class BuildHub extends JavaPlugin {
     private Config config;
     private CoordsConfig coordsConfig;
     private DiscordConfig discordConfig;
+    private StatusConfig statusConfig;
 
     private BaseData baseData;
     private CoordsData coordsData;
@@ -37,6 +38,7 @@ public final class BuildHub extends JavaPlugin {
     private FireballData fireballData;
     private Prefix prefixData;
     private Spawn spawn;
+    private StatusData statusData;
     private WebLink webLink;
 
     @Override
@@ -79,6 +81,8 @@ public final class BuildHub extends JavaPlugin {
         this.fireballData.save();
         this.spawn.save();
         this.webLink.save();
+        this.statusData.save();
+        this.statusConfig.save();
         this.coordsData.save();
         this.discordConfigData.save();
         this.baseConfig.save();
@@ -88,13 +92,14 @@ public final class BuildHub extends JavaPlugin {
     }
 
     public void loadConfigs() {
-
         this.config = new Config();
         this.coordsConfig = new CoordsConfig();
         this.discordConfig = new DiscordConfig();
         this.baseConfig = new BaseConfig();
         this.discordConfigData = new DiscordConfigData();
         this.coordsData = new CoordsData();
+        this.statusConfig = new StatusConfig();
+        this.statusData = new StatusData();
         this.discordLink = new DiscordLink();
         this.fireballData = new FireballData();
         this.prefixData = new Prefix();
@@ -109,6 +114,7 @@ public final class BuildHub extends JavaPlugin {
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new DeathListener(), this);
         pluginManager.registerEvents(new FireballListener(), this);
+        pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new ProtectListener(), this);
         pluginManager.registerEvents(new ServerListPingListener(), this);
     }
@@ -126,6 +132,8 @@ public final class BuildHub extends JavaPlugin {
         // Player
         Objects.requireNonNull(this.getCommand("gm")).setExecutor(new GMCommand());
         Objects.requireNonNull(this.getCommand("gm")).setTabCompleter(new GMCommand());
+        Objects.requireNonNull(this.getCommand("status")).setExecutor(new StatusCommand());
+        Objects.requireNonNull(this.getCommand("status")).setTabCompleter(new StatusCommand());
         Objects.requireNonNull(this.getCommand("sudo")).setExecutor(new SudoCommand());
 
         // Others
@@ -220,6 +228,10 @@ public final class BuildHub extends JavaPlugin {
 
     public DiscordConfig getDiscordConfig() {
         return discordConfig;
+    }
+
+    public StatusConfig getStatusConfig() {
+        return statusConfig;
     }
 
     public String getPrefix() {

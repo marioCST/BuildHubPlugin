@@ -94,6 +94,9 @@ commands:
   base:
     description: Gehe zu deiner Base oder setze sie!
     permission: mario.base
+  status:
+    description: Setze deinen Status!
+    permission: mario.status
 
 permissions:
   mario.*:
@@ -124,6 +127,7 @@ permissions:
       mario.spawn: true
       mario.setspawn: true
       mario.base: true
+      mario.status: true
   mario.broadcast:
     description: Rechte für den /broadcast Command!
     default: op
@@ -203,4 +207,7 @@ permissions:
     default: op
   mario.base:
     description: Rechte für den /base Command!
+    default: op
+  mario.status:
+    description: Rechte für den /status Command!
     default: op
