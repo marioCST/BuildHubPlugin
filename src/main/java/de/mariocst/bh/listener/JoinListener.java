@@ -1,5 +1,6 @@
 package de.mariocst.bh.listener;
 
+import de.mariocst.bh.config.configdata.DeathData;
 import de.mariocst.bh.config.configdata.StatusData;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
@@ -13,8 +14,22 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
 
         if (StatusData.getStatusData().getStatus(player) != null) {
-            player.displayName(Component.text(this.getStatus(player)).append(Component.text(" ")).append(player.name()));
-            player.playerListName(Component.text(this.getStatus(player)).append(Component.text(" ")).append(player.name()));
+            player.displayName(Component.text(this.getStatus(player))
+                    .append(Component.text(" "))
+                    .append(player.name())
+                    .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+            player.playerListName(Component.text(this.getStatus(player))
+                    .append(Component.text(" "))
+                    .append(player.name())
+                    .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+        }
+        else {
+            player.displayName(player.name()
+                    .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+            player.playerListName(player.name()
+                    .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
         }
     }
 

@@ -28,11 +28,13 @@ public final class BuildHub extends JavaPlugin {
     private BaseConfig baseConfig;
     private Config config;
     private CoordsConfig coordsConfig;
+    private DeathConfig deathConfig;
     private DiscordConfig discordConfig;
     private StatusConfig statusConfig;
 
     private BaseData baseData;
     private CoordsData coordsData;
+    private DeathData deathData;
     private DiscordConfigData discordConfigData;
     private DiscordLink discordLink;
     private FireballData fireballData;
@@ -77,6 +79,7 @@ public final class BuildHub extends JavaPlugin {
     public void saveConfigs() {
         this.baseData.save();
         this.coordsData.save();
+        this.deathData.save();
         this.discordConfigData.save();
         this.discordLink.save();
         this.fireballData.save();
@@ -88,6 +91,7 @@ public final class BuildHub extends JavaPlugin {
         this.baseConfig.save();
         this.config.save();
         this.coordsConfig.save();
+        this.deathConfig.save();
         this.discordConfig.save();
         this.statusConfig.save();
     }
@@ -96,11 +100,13 @@ public final class BuildHub extends JavaPlugin {
         this.baseConfig = new BaseConfig();
         this.config = new Config();
         this.coordsConfig = new CoordsConfig();
+        this.deathConfig = new DeathConfig();
         this.discordConfig = new DiscordConfig();
         this.statusConfig = new StatusConfig();
 
         this.baseData = new BaseData();
         this.coordsData = new CoordsData();
+        this.deathData = new DeathData();
         this.discordConfigData = new DiscordConfigData();
         this.discordLink = new DiscordLink();
         this.fireballData = new FireballData();
@@ -132,6 +138,8 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("invsee")).setExecutor(new InvseeCommand());
 
         // Player
+        Objects.requireNonNull(this.getCommand("death")).setExecutor(new DeathCommand());
+        Objects.requireNonNull(this.getCommand("death")).setTabCompleter(new DeathCommand());
         Objects.requireNonNull(this.getCommand("gm")).setExecutor(new GMCommand());
         Objects.requireNonNull(this.getCommand("gm")).setTabCompleter(new GMCommand());
         Objects.requireNonNull(this.getCommand("status")).setExecutor(new StatusCommand());
@@ -226,6 +234,10 @@ public final class BuildHub extends JavaPlugin {
 
     public CoordsConfig getCoordsConfig() {
         return coordsConfig;
+    }
+
+    public DeathConfig getDeathConfig() {
+        return deathConfig;
     }
 
     public DiscordConfig getDiscordConfig() {
