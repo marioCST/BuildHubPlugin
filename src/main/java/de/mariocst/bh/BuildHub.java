@@ -76,36 +76,38 @@ public final class BuildHub extends JavaPlugin {
 
     public void saveConfigs() {
         this.baseData.save();
-        this.discordLink.save();
-        this.prefixData.save();
-        this.fireballData.save();
-        this.spawn.save();
-        this.webLink.save();
-        this.statusData.save();
-        this.statusConfig.save();
         this.coordsData.save();
         this.discordConfigData.save();
+        this.discordLink.save();
+        this.fireballData.save();
+        this.prefixData.save();
+        this.spawn.save();
+        this.statusData.save();
+        this.webLink.save();
+
         this.baseConfig.save();
-        this.discordConfig.save();
-        this.coordsConfig.save();
         this.config.save();
+        this.coordsConfig.save();
+        this.discordConfig.save();
+        this.statusConfig.save();
     }
 
     public void loadConfigs() {
+        this.baseConfig = new BaseConfig();
         this.config = new Config();
         this.coordsConfig = new CoordsConfig();
         this.discordConfig = new DiscordConfig();
-        this.baseConfig = new BaseConfig();
-        this.discordConfigData = new DiscordConfigData();
-        this.coordsData = new CoordsData();
         this.statusConfig = new StatusConfig();
-        this.statusData = new StatusData();
+
+        this.baseData = new BaseData();
+        this.coordsData = new CoordsData();
+        this.discordConfigData = new DiscordConfigData();
         this.discordLink = new DiscordLink();
         this.fireballData = new FireballData();
         this.prefixData = new Prefix();
         this.spawn = new Spawn();
+        this.statusData = new StatusData();
         this.webLink = new WebLink();
-        this.baseData = new BaseData();
     }
 
     private void listenerRegistration() {
