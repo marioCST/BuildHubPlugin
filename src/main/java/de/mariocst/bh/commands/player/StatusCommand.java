@@ -1,6 +1,7 @@
 package de.mariocst.bh.commands.player;
 
 import de.mariocst.bh.BuildHub;
+import de.mariocst.bh.config.configdata.DeathData;
 import de.mariocst.bh.config.configdata.StatusData;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Sound;
@@ -34,6 +35,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.displayName(Component.text("§0[§4Aufnahme§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§4Aufnahme§0]").append(Component.text(" ")).append(player.name()));
 
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
+
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Aufnahme\"§f!");
                             StatusData.getStatusData().saveStatus(player, "aufnahme");
                             BuildHub.getInstance().saveConfigs();
@@ -41,6 +50,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                         case "bauen" -> {
                             player.displayName(Component.text("§0[§1Bauen§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§1Bauen§0]").append(Component.text(" ")).append(player.name()));
+
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
 
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Bauen\"§f!");
                             StatusData.getStatusData().saveStatus(player, "bauen");
@@ -50,6 +67,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.displayName(Component.text("§0[§eHilfe§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§eHilfe§0]").append(Component.text(" ")).append(player.name()));
 
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
+
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Hilfe\"§f!");
                             StatusData.getStatusData().saveStatus(player, "hilfe");
                             BuildHub.getInstance().saveConfigs();
@@ -57,6 +82,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                         case "live" -> {
                             player.displayName(Component.text("§0[§cLive§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§cLive§0]").append(Component.text(" ")).append(player.name()));
+
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
 
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Live\"§f!");
                             StatusData.getStatusData().saveStatus(player, "live");
@@ -66,6 +99,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.displayName(Component.text("§0[§4Redstone§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§4Redstone§0]").append(Component.text(" ")).append(player.name()));
 
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
+
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Redstone\"§f!");
                             StatusData.getStatusData().saveStatus(player, "redstone");
                             BuildHub.getInstance().saveConfigs();
@@ -74,6 +115,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.displayName(Component.text("§0[§6Verzweifelt§0]").append(Component.text(" ")).append(player.name()));
                             player.playerListName(Component.text("§0[§6Verzweifelt§0]").append(Component.text(" ")).append(player.name()));
 
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
+
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun auf §a\"Verzweifelt\"§f!");
                             StatusData.getStatusData().saveStatus(player, "verzweifelt");
                             BuildHub.getInstance().saveConfigs();
@@ -81,6 +130,14 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                         case "reset" -> {
                             player.displayName(player.name());
                             player.playerListName(player.name());
+
+                            if (DeathData.getDeathData().shouldDisplayDeaths()) {
+                                player.displayName(player.displayName()
+                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+
+                                player.playerListName(player.playerListName()
+                                        .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
+                            }
 
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Status ist nun zurückgesetzt worden!");
                             StatusData.getStatusData().resetStatus(player);

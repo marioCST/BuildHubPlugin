@@ -10,7 +10,9 @@ import de.mariocst.bh.commands.world.*;
 import de.mariocst.bh.config.configdata.*;
 import de.mariocst.bh.config.configs.*;
 import de.mariocst.bh.listener.*;
+import de.mariocst.bh.scoreboard.DeathScoreboard;
 import de.mariocst.bh.webhook.*;
+import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
@@ -64,6 +66,8 @@ public final class BuildHub extends JavaPlugin {
 
         this.listenerRegistration();
 
+        this.registerScoreboards();
+
         if (this.discordConfigData.getUrl().equals("")) this.log("Es ist kein Webhook Link angegeben!");
 
         this.log("BuildHub Plugin geladen!");
@@ -116,6 +120,10 @@ public final class BuildHub extends JavaPlugin {
         this.webLink = new WebLink();
     }
 
+    private void registerScoreboards() {
+        new DeathScoreboard(Component.text("§cTode"), this.getServer().getScoreboardManager().getMainScoreboard());
+    }
+
     private void listenerRegistration() {
         PluginManager pluginManager = this.getServer().getPluginManager();
 
@@ -137,18 +145,20 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("enderinvsee")).setExecutor(new EnderInvseeCommand());
         Objects.requireNonNull(this.getCommand("invsee")).setExecutor(new InvseeCommand());
 
+        // Others
+        Objects.requireNonNull(this.getCommand("discord")).setExecutor(new DiscordCommand());
+        Objects.requireNonNull(this.getCommand("web")).setExecutor(new WebCommand());
+
         // Player
         Objects.requireNonNull(this.getCommand("death")).setExecutor(new DeathCommand());
         Objects.requireNonNull(this.getCommand("death")).setTabCompleter(new DeathCommand());
         Objects.requireNonNull(this.getCommand("gm")).setExecutor(new GMCommand());
         Objects.requireNonNull(this.getCommand("gm")).setTabCompleter(new GMCommand());
+        Objects.requireNonNull(this.getCommand("scoreboard")).setExecutor(new ScoreboardCommand());
+        Objects.requireNonNull(this.getCommand("scoreboard")).setTabCompleter(new ScoreboardCommand());
         Objects.requireNonNull(this.getCommand("status")).setExecutor(new StatusCommand());
         Objects.requireNonNull(this.getCommand("status")).setTabCompleter(new StatusCommand());
         Objects.requireNonNull(this.getCommand("sudo")).setExecutor(new SudoCommand());
-
-        // Others
-        Objects.requireNonNull(this.getCommand("discord")).setExecutor(new DiscordCommand());
-        Objects.requireNonNull(this.getCommand("web")).setExecutor(new WebCommand());
 
         // Server
         Objects.requireNonNull(this.getCommand("base")).setExecutor(new BaseCommand());

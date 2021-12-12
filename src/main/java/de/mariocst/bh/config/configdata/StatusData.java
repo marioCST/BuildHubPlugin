@@ -4,8 +4,6 @@ import de.mariocst.bh.BuildHub;
 import de.mariocst.bh.config.configs.StatusConfig;
 import org.bukkit.entity.Player;
 
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -45,7 +43,7 @@ public class StatusData {
             return config.getConfig().getString("status." + player.getUniqueId());
         }
         else {
-            return null;
+            return "";
         }
     }
 

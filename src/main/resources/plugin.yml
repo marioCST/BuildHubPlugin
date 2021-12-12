@@ -100,6 +100,9 @@ commands:
   death:
     description: Bekomme die Tode eines Spielers, oder setze sie zurück!
     permission: mario.deaths
+  scoreboard:
+    description: Aktiviere/Deaktiviere das Death Scoreboard!
+    permission: mario.scoreboard
 
 permissions:
   mario.*:
@@ -132,6 +135,7 @@ permissions:
       mario.base: true
       mario.status: true
       mario.deaths: true
+      mario.scoreboard: true
   mario.broadcast:
     description: Rechte für den /broadcast Command!
     default: op
@@ -217,4 +221,7 @@ permissions:
     default: op
   mario.deaths:
     description: Rechte für den /deaths Command!
+    default: op
+  mario.scoreboard:
+    description: Rechte für den /scoreboard Command!
     default: op
