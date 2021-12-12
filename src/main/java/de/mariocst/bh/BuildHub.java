@@ -159,6 +159,7 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("status")).setExecutor(new StatusCommand());
         Objects.requireNonNull(this.getCommand("status")).setTabCompleter(new StatusCommand());
         Objects.requireNonNull(this.getCommand("sudo")).setExecutor(new SudoCommand());
+        Objects.requireNonNull(this.getCommand("sudo")).setTabCompleter(new SudoCommand());
 
         // Server
         Objects.requireNonNull(this.getCommand("base")).setExecutor(new BaseCommand());
