@@ -30,6 +30,10 @@ public class DeathScoreboard {
         objective.getScore(playerName).setScore(score);
     }
 
+    public void removeScore(String playerName) {
+        objective.getScore(playerName).resetScore();
+    }
+
     private void update() {
         new BukkitRunnable() {
             @Override
@@ -48,7 +52,68 @@ public class DeathScoreboard {
                 }
 
                 for (OfflinePlayer offlinePlayer : BuildHub.getInstance().getServer().getOfflinePlayers()) {
-                    setScore(DeathData.getDeathData().getDeaths(offlinePlayer), offlinePlayer.getName());
+                    if (DeathData.getDeathData().animateScoreboard()) {
+                        String[] name = Objects.requireNonNull(offlinePlayer.getName()).split("");
+                        String[] name2 = Objects.requireNonNull(offlinePlayer.getName()).split("");
+
+                        switch (count) {
+                            case 0 -> {
+                                for (int i = 0; i < name.length; i++) {
+                                    if (i % 2 == 0) {
+                                        name[i] = "§a" + name[i];
+                                        name2[i] = "§b" + name2[i];
+                                    }
+                                    else {
+                                        name[i] = "§b" + name[i];
+                                        name2[i] = "§a" + name2[i];
+                                    }
+                                }
+
+                                StringBuilder disName = new StringBuilder();
+                                StringBuilder disName2 = new StringBuilder();
+
+                                for (String s : name) {
+                                    disName.append(s);
+                                }
+
+                                for (String s : name2) {
+                                    disName2.append(s);
+                                }
+
+                                removeScore(disName2.toString());
+                                setScore(DeathData.getDeathData().getDeaths(offlinePlayer), disName.toString());
+                            }
+                            case 1 -> {
+                                for (int i = 0; i < name.length; i++) {
+                                    if (i % 2 == 0) {
+                                        name[i] = "§b" + name[i];
+                                        name2[i] = "§a" + name2[i];
+                                    }
+                                    else {
+                                        name[i] = "§a" + name[i];
+                                        name2[i] = "§b" + name2[i];
+                                    }
+                                }
+
+                                StringBuilder disName = new StringBuilder();
+                                StringBuilder disName2 = new StringBuilder();
+
+                                for (String s : name) {
+                                    disName.append(s);
+                                }
+
+                                for (String s : name2) {
+                                    disName2.append(s);
+                                }
+
+                                removeScore(disName2.toString());
+                                setScore(DeathData.getDeathData().getDeaths(offlinePlayer), disName.toString());
+                            }
+                        }
+                    }
+                    else {
+                        setScore(DeathData.getDeathData().getDeaths(offlinePlayer), offlinePlayer.getName());
+                    }
                 }
 
                 count++;
