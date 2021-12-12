@@ -17,10 +17,8 @@ public class InvseeCommand implements CommandExecutor {
         }
 
         if (player.hasPermission("mario.invsee") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) {
-            String usage = "§cUsage: §6/invsee <Spieler>";
             try {
                 if (args.length == 1) {
-                    String nullp = "§cDieser Spieler existiert nicht!";
                     try {
                         Player t = player.getServer().getPlayer(args[0]);
                         if (t != null) {
@@ -33,22 +31,22 @@ public class InvseeCommand implements CommandExecutor {
                             }
                         }
                         else {
-                            player.sendMessage(BuildHub.getInstance().getPrefix() + nullp);
+                            player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
                             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                         }
                     }
                     catch (NullPointerException e) {
-                        player.sendMessage(BuildHub.getInstance().getPrefix() + nullp);
+                        player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
                         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                     }
                 }
                 else {
-                    player.sendMessage(BuildHub.getInstance().getPrefix() + usage);
+                    player.sendMessage(BuildHub.getInstance().getPrefix() + "/invsee <Spieler>");
                     player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                 }
             }
             catch (ArrayIndexOutOfBoundsException e) {
-                player.sendMessage(BuildHub.getInstance().getPrefix() + usage);
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/invsee <Spieler>");
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }

@@ -17,7 +17,7 @@ public class SudoCommand implements CommandExecutor {
                     Player t = BuildHub.getInstance().getServer().getPlayer(args[0]);
 
                     if (t == null) {
-                        sender.sendMessage(BuildHub.getInstance().getPrefix() + "Unbekannter Spieler: " + args[0]);
+                        sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
                         return true;
                     }
 
@@ -55,7 +55,7 @@ public class SudoCommand implements CommandExecutor {
                     Player t = BuildHub.getInstance().getServer().getPlayer(args[0]);
 
                     if (t == null) {
-                        player.sendMessage(BuildHub.getInstance().getPrefix() + "Unbekannter Spieler: " + args[0]);
+                        player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
                         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
                         return true;
                     }
@@ -97,7 +97,7 @@ public class SudoCommand implements CommandExecutor {
             }
         }
         else {
-            player.sendMessage(BuildHub.getInstance().getPrefix() + "§cKeine Rechte!");
+            player.sendMessage(BuildHub.getInstance().getPrefix() + "Keine Rechte!");
             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
         }
         return false;

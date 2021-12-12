@@ -12,8 +12,6 @@ import org.jetbrains.annotations.NotNull;
 public class KickAllCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
-        final String usage = "/kickall [Grund]";
-
         if (!(sender instanceof Player player)) {
             try {
                 int count = BuildHub.getInstance().getServer().getOnlinePlayers().size();
@@ -53,7 +51,7 @@ public class KickAllCommand implements CommandExecutor {
                 }
             }
             catch (ArrayIndexOutOfBoundsException e) {
-                sender.sendMessage(BuildHub.getInstance().getPrefix() + usage);
+                sender.sendMessage(BuildHub.getInstance().getPrefix() + "/kickall [Grund]");
             }
             return false;
         }
@@ -99,7 +97,7 @@ public class KickAllCommand implements CommandExecutor {
                 }
             }
             catch (ArrayIndexOutOfBoundsException e) {
-                player.sendMessage(BuildHub.getInstance().getPrefix() + usage);
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/kickall [Grund]");
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }

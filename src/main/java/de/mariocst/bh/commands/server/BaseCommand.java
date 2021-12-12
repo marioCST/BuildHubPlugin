@@ -84,7 +84,7 @@ public class BaseCommand implements CommandExecutor, TabCompleter {
                             }
                         }
                         else {
-                            player.sendMessage(BuildHub.getInstance().getPrefix() + "Dieser Spieler existiert nicht!");
+                            player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[1] + " existiert nicht!");
                             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                         }
                     }

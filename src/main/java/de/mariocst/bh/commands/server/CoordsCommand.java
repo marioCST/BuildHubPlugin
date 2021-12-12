@@ -31,9 +31,7 @@ public class CoordsCommand implements CommandExecutor, TabCompleter {
             try {
                 if (args.length == 2) {
                     switch (args[0].toLowerCase()) {
-                        case "debug" -> {
-                            player.sendMessage(data.getCoordsLoc().keySet().toString());
-                        }
+                        case "debug" -> player.sendMessage(data.getCoordsLoc().keySet().toString());
                         case "get" -> {
                             if (data.getCoordsLoc().containsKey(player.getUniqueId().toString())) {
                                 if (data.getCoordsLoc().get(player.getUniqueId().toString()).containsKey(args[1])) {

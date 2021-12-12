@@ -44,11 +44,11 @@ public class SetLinkCommand implements CommandExecutor, TabCompleter {
                         sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Web Link ist nun: §a" + msg);
                         BuildHub.getInstance().saveConfigs();
                     }
-                    default -> sender.sendMessage("§cUsage: §e/setlink <discord|web> <Link>");
+                    default -> sender.sendMessage(BuildHub.getInstance().getPrefix() + "/setlink <discord|web> <Link>");
                 }
             }
             else {
-                BuildHub.getInstance().log("§cUsage: §e/setlink <discord|web> <Link>");
+                sender.sendMessage(BuildHub.getInstance().getPrefix() + "/setlink <discord|web> <Link>");
             }
             return false;
         }
@@ -74,11 +74,12 @@ public class SetLinkCommand implements CommandExecutor, TabCompleter {
                         player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Web Link ist nun: §a" + msg);
                         BuildHub.getInstance().saveConfigs();
                     }
-                    default -> player.sendMessage("§cUsage: §e/setlink <discord|web> <Link>");
+                    default -> player.sendMessage(BuildHub.getInstance().getPrefix() + "/setlink <discord|web> <Link>");
                 }
             }
             else {
-                player.sendMessage("§cUsage: §e/setlink <discord|web> <Link>");
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/setlink <discord|web> <Link>");
+                player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }
         else {

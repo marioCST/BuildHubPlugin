@@ -160,7 +160,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
             }
         }
         else {
-            player.sendMessage(BuildHub.getInstance().getPrefix() + "§cKeine Rechte!");
+            player.sendMessage(BuildHub.getInstance().getPrefix() + "Keine Rechte!");
             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0F, 1.0F);
         }
         return false;

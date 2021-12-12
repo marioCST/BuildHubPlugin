@@ -24,7 +24,7 @@ public class BroadcastCommand implements CommandExecutor {
                 BuildHub.getInstance().getServer().broadcast(Component.text(BuildHub.getInstance().getPrefix()));
             }
             else {
-                sender.sendMessage("§cUsage: §e/broadcast <Message>");
+                sender.sendMessage("/broadcast <Message>");
             }
             return false;
         }
@@ -41,7 +41,7 @@ public class BroadcastCommand implements CommandExecutor {
                 BuildHub.getInstance().getServer().broadcast(Component.text(BuildHub.getInstance().getPrefix()));
             }
             else {
-                player.sendMessage(BuildHub.getInstance().getPrefix() + "§cUsage: §e/broadcast <Message>");
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/broadcast <Message>");
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }

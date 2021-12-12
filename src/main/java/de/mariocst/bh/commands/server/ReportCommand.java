@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class ReportCommand implements CommandExecutor, TabCompleter {
     @Override
@@ -32,14 +31,7 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
                 if (args.length >= 2) {
                     try {
                         Player t = player.getServer().getPlayer(args[0]);
-
-                        OfflinePlayer oT = null;
-
-                        for (OfflinePlayer offlinePlayer : BuildHub.getInstance().getServer().getOfflinePlayers()) {
-                            if (Objects.equals(offlinePlayer.getName(), args[0])) {
-                                oT = offlinePlayer;
-                            }
-                        }
+                        OfflinePlayer oT = BuildHub.getInstance().getServer().getOfflinePlayerIfCached(args[0]);
 
                         if (t != null) {
                             StringBuilder msg = new StringBuilder();
@@ -102,23 +94,23 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
                             }
                         }
                         else {
-                            player.sendMessage("§cDieser Spieler existiert nicht!");
+                            player.sendMessage("Der Spieler " + args[0] + " existiert nicht!");
                             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                         }
                     }
                     catch (NullPointerException e) {
                         
-                        player.sendMessage("§cDieser Spieler existiert nicht!");
+                        player.sendMessage("Der Spieler " + args[0] + " existiert nicht!");
                         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                     }
                 }
                 else {
-                    player.sendMessage("§cUsage: §e/report <Spieler> <Message>");
+                    player.sendMessage(BuildHub.getInstance().getPrefix() + "/report <Spieler> <Message>");
                     player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                 }
             }
             catch (ArrayIndexOutOfBoundsException e) {
-                player.sendMessage("§cUsage: §e/report <Spieler> <Message>");
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/report <Spieler> <Message>");
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }
