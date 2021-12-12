@@ -103,6 +103,12 @@ commands:
   scoreboard:
     description: Aktiviere/Deaktiviere das Death Scoreboard!
     permission: mario.scoreboard
+  feed:
+    description: Sättige dich oder einen anderen Spieler!
+    permission: mario.feed
+  heal:
+    description: Heile dich oder einen anderen Spieler!
+    permission: mario.heal
 
 permissions:
   mario.*:
@@ -136,6 +142,8 @@ permissions:
       mario.status: true
       mario.deaths: true
       mario.scoreboard: true
+      mario.feed: true
+      mario.heal: true
   mario.broadcast:
     description: Rechte für den /broadcast Command!
     default: op
@@ -225,3 +233,17 @@ permissions:
   mario.scoreboard:
     description: Rechte für den /scoreboard Command!
     default: op
+  mario.feed:
+    description: Rechte für den /feed Command!
+    default: op
+    children:
+      mario.feed.other:
+        description: Sättige andere Spieler!
+        default: op
+  mario.heal:
+    description: Rechte für den /heal Command!
+    default: op
+    children:
+      mario.heal.other:
+        description: Heile andere Spieler!
+        default: op

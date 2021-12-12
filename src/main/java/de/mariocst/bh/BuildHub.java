@@ -152,8 +152,12 @@ public final class BuildHub extends JavaPlugin {
         // Player
         Objects.requireNonNull(this.getCommand("death")).setExecutor(new DeathCommand());
         Objects.requireNonNull(this.getCommand("death")).setTabCompleter(new DeathCommand());
+        Objects.requireNonNull(this.getCommand("feed")).setExecutor(new FeedCommand());
+        Objects.requireNonNull(this.getCommand("feed")).setTabCompleter(new FeedCommand());
         Objects.requireNonNull(this.getCommand("gm")).setExecutor(new GMCommand());
         Objects.requireNonNull(this.getCommand("gm")).setTabCompleter(new GMCommand());
+        Objects.requireNonNull(this.getCommand("heal")).setExecutor(new HealCommand());
+        Objects.requireNonNull(this.getCommand("heal")).setTabCompleter(new HealCommand());
         Objects.requireNonNull(this.getCommand("scoreboard")).setExecutor(new ScoreboardCommand());
         Objects.requireNonNull(this.getCommand("scoreboard")).setTabCompleter(new ScoreboardCommand());
         Objects.requireNonNull(this.getCommand("status")).setExecutor(new StatusCommand());
