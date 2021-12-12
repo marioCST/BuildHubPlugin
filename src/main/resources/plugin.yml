@@ -7,151 +7,148 @@ description: Plugin for BuldHub
 #depend: [WorldEdit]
 
 commands:
+  base:
+    description: Gehe zu deiner Base oder setze sie!
+    permission: mario.base
   broadcast:
     description: Schreibt die Nachricht nach dem Befehl in den Chat!
     aliases: [ "bc" ]
     permission: mario.broadcast
-  discord:
-    description: Link zum definierten Discord.
-    aliases: [ "dc" ]
-    permission: mario.discord
-  setlink:
-    description: Setzt den Link für /discord
-    aliases: [ "sl" ]
-    permission: mario.setlink
   chatclear:
     description: Cleart den Chat
     aliases: [ "cc" ]
     permission: mario.chatclear
-  gm:
-    description: Ist wie /gamemode nur in kurz
-    permission: mario.gm
-  day:
-    description: Macht Tag
-    permission: mario.day
-  night:
-    description: Macht Nacht
-    permission: mario.night
-  invsee:
-    description: Öffnet das Inventar eines anderen Spielers!
-    aliases: [ "isee" ]
-    permission: mario.invsee
-  enderinvsee:
-    description: Öffnet die Enderchest eines anderen Spielers!
-    aliases: [ "esee" ]
-    permission: mario.enderinvsee
-  kickall:
-    description: Kickt alle Spieler, die Online sind, außer den Commandsender!
-    aliases: [ "ka" ]
-    permission: mario.kickall
-  forceloadchunk:
-    description: Lasse einen Chunk immer geladen sein! Oder auch nicht.
-    aliases: [ "flc" ]
-    permission: mario.forceloadchunk
-  setprefix:
-    description: Ändere den Prefix dieses Plugins!
-    aliases: [ "sp" ]
-    permission: mario.setprefix
-  config:
-    description: Speichere oder lade alle Configs neu!
-    aliases: [ "c" ]
-    permission: mario.config
-  getentities:
-    description: Welche Entities sind in meiner Welt? (Chat wird zugespammt)
-    aliases: [ "ge" ]
-    permission: mario.getentities
-  killradius:
-    description: Töte alle Mobs in einem bestimmten Radius
-    aliases: [ "kr" ]
-    permission: mario.killradius
-  web:
-    description: Bekomme den Link zu unserer Website!
-    aliases: [ "weblink", "wl" ]
-    permission: mario.web
   colorcodes:
     description: Alle Color Codes in einer Liste!
     aliases: [ "ccodes", "colorc" ]
     permission: mario.colorcodes
-  report:
-    description: Reporte eine Spieler!
-    permission: mario.report
-  sudo:
-    description: Führe Commands als ein anderer Spieler aus!
-    permission: mario.sudo
+  config:
+    description: Speichere oder lade alle Configs neu!
+    aliases: [ "c" ]
+    permission: mario.config
+  coords:
+    description: Setze dir eine Position mit Namen!
+    permission: mario.coords
+  day:
+    description: Macht Tag
+    permission: mario.day
+  death:
+    description: Bekomme die Tode eines Spielers, oder setze sie zurück!
+    permission: mario.deaths
+  discord:
+    description: Link zum definierten Discord.
+    aliases: [ "dc" ]
+    permission: mario.discord
+  enderinvsee:
+    description: Öffnet die Enderchest eines anderen Spielers!
+    aliases: [ "esee" ]
+    permission: mario.enderinvsee
+  feed:
+    description: Sättige dich oder einen anderen Spieler!
+    permission: mario.feed
+  forceloadchunk:
+    description: Lasse einen Chunk immer geladen sein! Oder auch nicht.
+    aliases: [ "flc" ]
+    permission: mario.forceloadchunk
+  getentities:
+    description: Welche Entities sind in meiner Welt? (Chat wird zugespammt)
+    aliases: [ "ge" ]
+    permission: mario.getentities
+  setlink:
+    description: Setzt den Link für /discord
+    aliases: [ "sl" ]
+    permission: mario.setlink
+  gm:
+    description: Ist wie /gamemode nur in kurz
+    permission: mario.gm
+  heal:
+    description: Heile dich oder einen anderen Spieler!
+    permission: mario.heal
+  invsee:
+    description: Öffnet das Inventar eines anderen Spielers!
+    aliases: [ "isee" ]
+    permission: mario.invsee
+  night:
+    description: Macht Nacht
+    permission: mario.night
+  kickall:
+    description: Kickt alle Spieler, die Online sind, außer den Commandsender!
+    aliases: [ "ka" ]
+    permission: mario.kickall
+  killradius:
+    description: Töte alle Mobs in einem bestimmten Radius
+    aliases: [ "kr" ]
+    permission: mario.killradius
   onlineplayers:
     description: Wer ist alles Online?
     aliases: [ "oplayers" ]
     permission: mario.onlineplayers
-  coords:
-    description: Setze dir eine Position mit Namen!
-    permission: mario.coords
-  spawn:
-    description: Gehe zum gesetzten Spawnpoint!
-    permission: mario.spawn
-  setspawn:
-    description: Setzt den Spawn!
-    permission: mario.setspawn
-  base:
-    description: Gehe zu deiner Base oder setze sie!
-    permission: mario.base
-  status:
-    description: Setze deinen Status!
-    permission: mario.status
-  death:
-    description: Bekomme die Tode eines Spielers, oder setze sie zurück!
-    permission: mario.deaths
+  report:
+    description: Reporte eine Spieler!
+    permission: mario.report
   scoreboard:
     description: Aktiviere/Deaktiviere das Death Scoreboard!
     permission: mario.scoreboard
-  feed:
-    description: Sättige dich oder einen anderen Spieler!
-    permission: mario.feed
-  heal:
-    description: Heile dich oder einen anderen Spieler!
-    permission: mario.heal
+  setprefix:
+    description: Ändere den Prefix dieses Plugins!
+    aliases: [ "sp" ]
+    permission: mario.setprefix
+  setspawn:
+    description: Setzt den Spawn!
+    permission: mario.setspawn
+  spawn:
+    description: Gehe zum gesetzten Spawnpoint!
+    permission: mario.spawn
+  status:
+    description: Setze deinen Status!
+    permission: mario.status
+  sudo:
+    description: Führe Commands als ein anderer Spieler aus!
+    permission: mario.sudo
+  web:
+    description: Bekomme den Link zu unserer Website!
+    aliases: [ "weblink", "wl" ]
+    permission: mario.web
 
 permissions:
   mario.*:
     description: Alle Rechte zu diesem Plugin!
     default: op
     children:
-      mario.broadcast: true
-      mario.discord: true
-      mario.setlink: true
-      mario.chatclear: true
-      mario.gm: true
-      mario.day: true
-      mario.night: true
-      mario.invsee: true
-      mario.enderinvsee: true
-      mario.kickall: true
-      mario.forceloadchunk: true
-      mario.setprefix: true
-      mario.config: true
-      mario.getentities: true
-      mario.killradius: true
-      mario.web: true
-      mario.colorcodes: true
-      mario.report: true
-      mario.sudo: true
-      mario.onlineplayers: true
-      mario.coords: true
-      mario.spawn: true
-      mario.setspawn: true
       mario.base: true
-      mario.status: true
+      mario.broadcast: true
+      mario.chatclear: true
+      mario.colorcodes: true
+      mario.config: true
+      mario.coords: true
+      mario.day: true
       mario.deaths: true
-      mario.scoreboard: true
+      mario.discord: true
+      mario.enderinvsee: true
       mario.feed: true
+      mario.forceloadchunk: true
+      mario.getentities: true
+      mario.gm: true
       mario.heal: true
+      mario.invsee: true
+      mario.kickall: true
+      mario.killradius: true
+      mario.night: true
+      mario.onlineplayers: true
+      mario.report: true
+      mario.scoreboard: true
+      mario.setlink: true
+      mario.setprefix: true
+      mario.setspawn: true
+      mario.spawn: true
+      mario.status: true
+      mario.sudo: true
+      mario.web: true
+  mario.base:
+    description: Rechte für den /base Command!
+    default: op
   mario.broadcast:
     description: Rechte für den /broadcast Command!
-    default: op
-  mario.discord:
-    description: Rechte für den /discord Command!
-    default: op
-  mario.setlink:
-    description: Rechte für den /setlink Command!
     default: op
   mario.chatclear:
     description: Rechte für den /chatclear Command!
@@ -160,78 +157,26 @@ permissions:
       mario.chatclear.bypass:
         description: Bypass chat clear!
         default: op
-  mario.gm:
-    description: Rechte für den /gm Command!
-    default: op
-  mario.day:
-    description: Rechte für den /day Command!
-    default: op
-  mario.night:
-    description: Rechte für den /night Command!
-    default: op
-  mario.invsee:
-    description: Rechte für den /invsee Command!
-    default: op
-  mario.enderinvsee:
-    description: Rechte für den /enderinvsee Command!
-    default: op
-  mario.kickall:
-    description: Rechte für den /kickall Command!
-    default: op
-  mario.forceloadchunk:
-    description: Rechte für den /forceloadchunk Command!
-    default: op
-  mario.setprefix:
-    description: Rechte für den /setprefix Command!
+  mario.colorcodes:
+    description: Rechte für den /colorcodes Command!
     default: op
   mario.config:
     description: Rechte für den /config Command!
     default: op
-  mario.getentities:
-    description: Rechte für den /getentities Command!
-    default: op
-  mario.killradius:
-    description: Rechte für den /killradius Command!
-    default: op
-  mario.web:
-    description: Rechte für den /web Command!
-    default: op
-  mario.colorcodes:
-    description: Rechte für den /colorcodes Command!
-    default: op
-  mario.report:
-    description: Rechte für den /report Command!
-    default: op
-  mario.sudo:
-    description: Rechte für den /sudo Command!
-    default: op
-    children:
-      mario.sudo.bypass:
-        description: Werde nicht von Sudo kontrolliert!
-        default: op
-  mario.onlineplayers:
-    description: Rechte für den /onlineplayers Command!
-    default: op
   mario.coords:
     description: Rechte für den /coords Command!
     default: op
-  mario.spawn:
-    description: Rechte für den /spawn Command!
-    default: op
-  mario.setspawn:
-    description: Rechte für den /setspawn Command!
-    default: op
-  mario.base:
-    description: Rechte für den /base Command!
-    default: op
-  mario.status:
-    description: Rechte für den /status Command!
+  mario.day:
+    description: Rechte für den /day Command!
     default: op
   mario.deaths:
     description: Rechte für den /deaths Command!
     default: op
-  mario.scoreboard:
-    description: Rechte für den /scoreboard Command!
+  mario.discord:
+    description: Rechte für den /discord Command!
+    default: op
+  mario.enderinvsee:
+    description: Rechte für den /enderinvsee Command!
     default: op
   mario.feed:
     description: Rechte für den /feed Command!
@@ -240,6 +185,15 @@ permissions:
       mario.feed.other:
         description: Sättige andere Spieler!
         default: op
+  mario.forceloadchunk:
+    description: Rechte für den /forceloadchunk Command!
+    default: op
+  mario.getentities:
+    description: Rechte für den /getentities Command!
+    default: op
+  mario.gm:
+    description: Rechte für den /gm Command!
+    default: op
   mario.heal:
     description: Rechte für den /heal Command!
     default: op
@@ -247,3 +201,49 @@ permissions:
       mario.heal.other:
         description: Heile andere Spieler!
         default: op
+  mario.invsee:
+    description: Rechte für den /invsee Command!
+    default: op
+  mario.kickall:
+    description: Rechte für den /kickall Command!
+    default: op
+  mario.killradius:
+    description: Rechte für den /killradius Command!
+    default: op
+  mario.night:
+    description: Rechte für den /night Command!
+    default: op
+  mario.onlineplayers:
+    description: Rechte für den /onlineplayers Command!
+    default: op
+  mario.report:
+    description: Rechte für den /report Command!
+    default: op
+  mario.scoreboard:
+    description: Rechte für den /scoreboard Command!
+    default: op
+  mario.setlink:
+    description: Rechte für den /setlink Command!
+    default: op
+  mario.setprefix:
+    description: Rechte für den /setprefix Command!
+    default: op
+  mario.setspawn:
+    description: Rechte für den /setspawn Command!
+    default: op
+  mario.spawn:
+    description: Rechte für den /spawn Command!
+    default: op
+  mario.status:
+    description: Rechte für den /status Command!
+    default: op
+  mario.sudo:
+    description: Rechte für den /sudo Command!
+    default: op
+    children:
+      mario.sudo.bypass:
+        description: Werde nicht von Sudo kontrolliert!
+        default: op
+  mario.web:
+    description: Rechte für den /web Command!
+    default: op
