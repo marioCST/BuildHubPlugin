@@ -5,6 +5,7 @@
 *.ipr
 *.iws
 
+# Custom file types
 *.mca
 *.dat
 *.dat_old
@@ -14,6 +15,9 @@
 *.properties
 *.bat
 *.mcmeta
+
+# Custom directories
+.server/
 
 # IntelliJ
 out/
