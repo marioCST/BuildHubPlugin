@@ -68,9 +68,11 @@ public final class BuildHub extends JavaPlugin {
 
         this.registerScoreboards();
 
-        if (this.discordConfigData.getUrl().equals("")) this.log("Es ist kein Webhook Link angegeben!");
+        if (this.discordConfigData.getReportUrl().equals("")) this.log("Es ist kein Report Webhook Link angegeben!");
+        if (this.discordConfigData.getServerInfoUrl().equals("")) this.log("Es ist kein Server Info Webhook Link angegeben!");
 
         this.log("BuildHub Plugin geladen!");
+        if (this.discordConfigData.getServerInfoUrl().equals("")) this.enableHook();
     }
 
     @Override
@@ -78,6 +80,7 @@ public final class BuildHub extends JavaPlugin {
         this.saveConfigs();
 
         this.log("BuildHub Plugin entladen!");
+        if (this.discordConfigData.getServerInfoUrl().equals("")) this.disableHook();
     }
 
     public void saveConfigs() {
@@ -202,7 +205,7 @@ public final class BuildHub extends JavaPlugin {
     }
 
     public void sendReport(Player player, Player reported, String reason) throws IOException {
-        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getUrl());
+        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getReportUrl());
 
         webhook.addEmbed(new DiscordWebhook.EmbedObject()
                 .setTitle(discordConfigData.getTitle() + " Report")
@@ -221,7 +224,7 @@ public final class BuildHub extends JavaPlugin {
     }
 
     public void sendReport(Player player, OfflinePlayer reported, String reason) throws IOException {
-        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getUrl());
+        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getReportUrl());
 
         webhook.addEmbed(new DiscordWebhook.EmbedObject()
                 .setTitle(discordConfigData.getTitle() + " Report")
@@ -229,6 +232,38 @@ public final class BuildHub extends JavaPlugin {
                 .addField("Spieler", player.getName(), false)
                 .addField("Reported", reported.getName(), false)
                 .addField("Grund", reason, false)
+                .setColor(Color.RED));
+
+        try {
+            webhook.execute();
+        }
+        catch (IOException e) {
+            this.getServer().getLogger().severe(e.getLocalizedMessage());
+        }
+    }
+
+    public void enableHook() {
+        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getServerInfoUrl());
+
+        webhook.addEmbed(new DiscordWebhook.EmbedObject()
+                .setTitle("SERVER INFO")
+                .setDescription("Der Server startet gerade!")
+                .setColor(Color.RED));
+
+        try {
+            webhook.execute();
+        }
+        catch (IOException e) {
+            this.getServer().getLogger().severe(e.getLocalizedMessage());
+        }
+    }
+
+    public void disableHook() {
+        DiscordWebhook webhook = new DiscordWebhook(discordConfigData.getServerInfoUrl());
+
+        webhook.addEmbed(new DiscordWebhook.EmbedObject()
+                .setTitle("SERVER INFO")
+                .setDescription("Der Server stoppt gerade!")
                 .setColor(Color.RED));
 
         try {

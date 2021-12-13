@@ -53,7 +53,7 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
 
                             if (staffOnline == 0)  player.sendMessage(BuildHub.getInstance().getPrefix() + "§cEs ist kein Teammitglied Online!");
 
-                            if (!DiscordConfigData.getDiscordConfigData().getUrl().equals("")) {
+                            if (!DiscordConfigData.getDiscordConfigData().getReportUrl().equals("")) {
                                 try {
                                     BuildHub.getInstance().sendReport(player, t, msg.toString());
                                     player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Report wurde erfolgreich an das Discord Team gesendet!");
@@ -83,7 +83,7 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
 
                             if (staffOnline == 0)  player.sendMessage(BuildHub.getInstance().getPrefix() + "§cEs ist kein Teammitglied Online!");
 
-                            if (!DiscordConfigData.getDiscordConfigData().getUrl().equals("")) {
+                            if (!DiscordConfigData.getDiscordConfigData().getReportUrl().equals("")) {
                                 try {
                                     BuildHub.getInstance().sendReport(player, oT, msg.toString());
                                     player.sendMessage(BuildHub.getInstance().getPrefix() + "Dein Report wurde erfolgreich an das Discord Team gesendet!");

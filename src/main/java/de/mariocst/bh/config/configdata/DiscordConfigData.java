@@ -6,9 +6,10 @@ import de.mariocst.bh.config.configs.DiscordConfig;
 import java.util.Objects;
 
 public class DiscordConfigData {
-    private String url;
-    private String description;
-    private String title;
+    private final String reportUrl;
+    private final String serverInfoUrl;
+    private final String description;
+    private final String title;
 
     private static DiscordConfigData discordConfigData;
 
@@ -17,11 +18,18 @@ public class DiscordConfigData {
 
         DiscordConfig config = BuildHub.getInstance().getDiscordConfig();
 
-        if (config.getConfig().contains("webhook")) {
-            this.url = Objects.requireNonNull(config.getConfig().getString("webhook")).replaceAll("'", "");
+        if (config.getConfig().contains("reportUrl")) {
+            this.reportUrl = Objects.requireNonNull(config.getConfig().getString("reportUrl")).replaceAll("'", "");
         }
         else {
-            this.url = "";
+            this.reportUrl = "";
+        }
+
+        if (config.getConfig().contains("serverInfoUrl")) {
+            this.serverInfoUrl = Objects.requireNonNull(config.getConfig().getString("serverInfoUrl")).replaceAll("'", "");
+        }
+        else {
+            this.serverInfoUrl = "";
         }
 
         if (config.getConfig().contains("description")) {
@@ -43,8 +51,12 @@ public class DiscordConfigData {
         return discordConfigData;
     }
 
-    public String getUrl() {
-        return url;
+    public String getReportUrl() {
+        return reportUrl;
+    }
+
+    public String getServerInfoUrl() {
+        return serverInfoUrl;
     }
 
     public String getDescription() {
@@ -58,7 +70,8 @@ public class DiscordConfigData {
     public void save() {
         DiscordConfig config = BuildHub.getInstance().getDiscordConfig();
 
-        config.getConfig().set("webhook", this.url);
+        config.getConfig().set("reportUrl", this.reportUrl);
+        config.getConfig().set("serverInfoUrl", this.serverInfoUrl);
         config.getConfig().set("description", this.description);
         config.getConfig().set("title", this.title);
     }
