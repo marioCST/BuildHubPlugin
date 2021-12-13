@@ -4,7 +4,7 @@ main: de.mariocst.bh.BuildHub
 api-version: 1.18
 authors: [ marioCST ]
 description: Plugin for BuldHub
-#depend: [WorldEdit]
+depend: [WorldEdit]
 
 commands:
   base:

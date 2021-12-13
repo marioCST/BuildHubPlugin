@@ -1,7 +1,7 @@
 package de.mariocst.bh.commands.world;
 
-/*import com.sk89q.worldedit.IncompleteRegionException;
-*import com.sk89q.worldedit.LocalSession;
+import com.sk89q.worldedit.IncompleteRegionException;
+import com.sk89q.worldedit.LocalSession;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.bukkit.BukkitPlayer;
@@ -9,7 +9,7 @@ import com.sk89q.worldedit.math.BlockVector2;
 import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldedit.session.SessionManager;
 import com.sk89q.worldedit.util.formatting.text.TextComponent;
-import com.sk89q.worldedit.world.World;*/
+import com.sk89q.worldedit.world.World;
 import de.mariocst.bh.BuildHub;
 import org.bukkit.Chunk;
 import org.bukkit.Sound;
@@ -50,8 +50,8 @@ public class ForceLoadChunkCommand implements CommandExecutor, TabCompleter {
                 if (args[0].equalsIgnoreCase("region")) {
                     player.sendMessage(BuildHub.getInstance().getPrefix() + "Aufgrund des Minecraft 1.18 Updates ist dieses Feature nicht enthalten, bis WorldEdit auf der 1.18 ist.");
 
-                    /*BukkitPlayer bukkitPlayer = BukkitAdapter.adapt(player);
-                    *SessionManager manager = WorldEdit.getInstance().getSessionManager();
+                    BukkitPlayer bukkitPlayer = BukkitAdapter.adapt(player);
+                    SessionManager manager = WorldEdit.getInstance().getSessionManager();
                     LocalSession localSession = manager.get(bukkitPlayer);
                     Region region;
 
@@ -87,7 +87,7 @@ public class ForceLoadChunkCommand implements CommandExecutor, TabCompleter {
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "/forceloadchunk region <true|false>");
                             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                         }
-                    }*/
+                    }
                 }
                 else {
                     player.sendMessage(BuildHub.getInstance().getPrefix() + "/forceloadchunk region <true|false>");
