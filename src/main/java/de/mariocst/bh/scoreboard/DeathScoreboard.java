@@ -42,8 +42,8 @@ public class DeathScoreboard {
 
                 if (DeathData.getDeathData().animateScoreboard()) {
                     switch (count) {
-                        case 0 -> objective.displayName(Component.text("§cT§4o§cd§4e"));
-                        case 1 -> objective.displayName(Component.text("§4T§co§4d§ce"));
+                        case 0 -> objective.displayName(Component.text("§cT§do§4d§de"));
+                        case 1 -> objective.displayName(Component.text("§dT§co§dd§4e"));
                         default -> objective.displayName(Component.text("§cTode"));
                     }
                 }
