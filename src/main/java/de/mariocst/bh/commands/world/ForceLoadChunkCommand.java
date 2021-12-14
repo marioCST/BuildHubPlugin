@@ -48,8 +48,6 @@ public class ForceLoadChunkCommand implements CommandExecutor, TabCompleter {
             }
             else if (args.length == 2) {
                 if (args[0].equalsIgnoreCase("region")) {
-                    player.sendMessage(BuildHub.getInstance().getPrefix() + "Aufgrund des Minecraft 1.18 Updates ist dieses Feature nicht enthalten, bis WorldEdit auf der 1.18 ist.");
-
                     BukkitPlayer bukkitPlayer = BukkitAdapter.adapt(player);
                     SessionManager manager = WorldEdit.getInstance().getSessionManager();
                     LocalSession localSession = manager.get(bukkitPlayer);
