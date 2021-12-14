@@ -23,7 +23,7 @@ public class InvseeCommand implements CommandExecutor {
                         Player t = player.getServer().getPlayer(args[0]);
                         if (t != null) {
                             if (t.getName().equals(player.getName())) {
-                                player.sendMessage(BuildHub.getInstance().getPrefix() + "Du kannst doch wohl noch dein eigenes Inventar öffnen xD");
+                                player.sendMessage(BuildHub.getInstance().getPrefix() + "Du kannst doch wohl noch dein eigenes Inventar öffnen...");
                                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                             }
                             else {
