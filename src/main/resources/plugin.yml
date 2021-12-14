@@ -54,10 +54,6 @@ commands:
     description: Welche Entities sind in meiner Welt? (Chat wird zugespammt)
     aliases: [ "ge" ]
     permission: mario.getentities
-  setlink:
-    description: Setzt den Link für /discord
-    aliases: [ "sl" ]
-    permission: mario.setlink
   gm:
     description: Ist wie /gamemode nur in kurz
     permission: mario.gm
@@ -89,6 +85,10 @@ commands:
   scoreboard:
     description: Aktiviere/Deaktiviere das Death Scoreboard!
     permission: mario.scoreboard
+  setlink:
+    description: Setzt den Link für /discord
+    aliases: [ "sl" ]
+    permission: mario.setlink
   setprefix:
     description: Ändere den Prefix dieses Plugins!
     aliases: [ "sp" ]
