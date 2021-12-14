@@ -23,5 +23,6 @@ public class ServerListPingListener implements Listener {
         event.getPlayerSample().clear();
         event.getPlayerSample().add(new FakePlayerProfile("\u00A71\u00A7lBuild\u00A72\u00A7lHub"));
         event.getPlayerSample().add(new FakePlayerProfile("\u00A7b\u00A7l1.18.1"));
+        event.getPlayerSample().add(new FakePlayerProfile("\u00A7a\u00A7lFree Servers at PloudOS.com!"));
     }
 }
