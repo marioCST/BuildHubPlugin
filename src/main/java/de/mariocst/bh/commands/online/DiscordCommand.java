@@ -1,4 +1,4 @@
-package de.mariocst.bh.commands.others;
+package de.mariocst.bh.commands.online;
 
 import de.mariocst.bh.BuildHub;
 import de.mariocst.bh.config.configdata.DiscordLink;

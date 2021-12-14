@@ -1,8 +1,8 @@
 package de.mariocst.bh;
 
 import de.mariocst.bh.commands.chat.*;
-import de.mariocst.bh.commands.invsee.*;
-import de.mariocst.bh.commands.others.*;
+import de.mariocst.bh.commands.inventory.*;
+import de.mariocst.bh.commands.online.*;
 import de.mariocst.bh.commands.player.*;
 import de.mariocst.bh.commands.server.*;
 import de.mariocst.bh.commands.setter.*;
@@ -144,11 +144,11 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("chatclear")).setExecutor(new ChatClearCommand());
         Objects.requireNonNull(this.getCommand("colorcodes")).setExecutor(new ColorCodesCommand());
 
-        // Invsee
+        // Inventory
         Objects.requireNonNull(this.getCommand("enderinvsee")).setExecutor(new EnderInvseeCommand());
         Objects.requireNonNull(this.getCommand("invsee")).setExecutor(new InvseeCommand());
 
-        // Others
+        // Online
         Objects.requireNonNull(this.getCommand("discord")).setExecutor(new DiscordCommand());
         Objects.requireNonNull(this.getCommand("web")).setExecutor(new WebCommand());
 

@@ -1,4 +1,4 @@
-package de.mariocst.bh.commands.invsee;
+package de.mariocst.bh.commands.inventory;
 
 import de.mariocst.bh.BuildHub;
 import org.bukkit.Sound;
@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class EnderInvseeCommand implements CommandExecutor {
+public class InvseeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (!(sender instanceof Player player)) {
@@ -16,18 +16,18 @@ public class EnderInvseeCommand implements CommandExecutor {
             return false;
         }
 
-        if (player.hasPermission("mario.enderinvsee") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) {
+        if (player.hasPermission("mario.invsee") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) {
             try {
                 if (args.length == 1) {
                     try {
                         Player t = player.getServer().getPlayer(args[0]);
                         if (t != null) {
                             if (t.getName().equals(player.getName())) {
-                                player.sendMessage(BuildHub.getInstance().getPrefix() + "Du kannst doch wohl noch deine eigene EnderChest öffnen...");
+                                player.sendMessage(BuildHub.getInstance().getPrefix() + "Du kannst doch wohl noch dein eigenes Inventar öffnen...");
                                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                             }
                             else {
-                                player.openInventory(t.getEnderChest());
+                                player.openInventory(t.getInventory());
                             }
                         }
                         else {
@@ -41,12 +41,12 @@ public class EnderInvseeCommand implements CommandExecutor {
                     }
                 }
                 else {
-                    player.sendMessage(BuildHub.getInstance().getPrefix() + "/enderinvsee <Spieler>");
+                    player.sendMessage(BuildHub.getInstance().getPrefix() + "/invsee <Spieler>");
                     player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                 }
             }
             catch (ArrayIndexOutOfBoundsException e) {
-                player.sendMessage(BuildHub.getInstance().getPrefix() + "/enderinvsee <Spieler>");
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "/invsee <Spieler>");
                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
             }
         }
