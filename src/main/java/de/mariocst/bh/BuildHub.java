@@ -73,9 +73,6 @@ public final class BuildHub extends JavaPlugin {
 
         this.registerScoreboards();
 
-        if (this.discordConfigData.getReportUrl().equals("")) this.log("Es ist kein Report Webhook Link angegeben!");
-        if (this.discordConfigData.getServerInfoUrl().equals("")) this.log("Es ist kein Server Info Webhook Link angegeben!");
-
         this.log("BuildHub Plugin geladen!");
         if (this.discordConfigData.getServerInfoUrl().equals("")) this.enableHook();
     }
