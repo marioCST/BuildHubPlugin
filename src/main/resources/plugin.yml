@@ -64,6 +64,10 @@ commands:
     description: Öffnet das Inventar eines anderen Spielers!
     aliases: [ "isee" ]
     permission: mario.invsee
+  message:
+    description: Schreibe einem Spieler/der Konsole!
+    aliases: [ "msg" ]
+    permission: mario.msg
   night:
     description: Macht Nacht
     permission: mario.night
@@ -79,6 +83,10 @@ commands:
     description: Wer ist alles Online?
     aliases: [ "oplayers" ]
     permission: mario.onlineplayers
+  reply:
+    description: Schreibe zum zuletzt von dir angeschriebenen Spieler/der Konsole!
+    aliases: [ "r" ]
+    permission: mario.msg
   report:
     description: Reporte eine Spieler!
     permission: mario.report
@@ -133,6 +141,7 @@ permissions:
       mario.invsee: true
       mario.kickall: true
       mario.killradius: true
+      mario.msg: true
       mario.night: true
       mario.onlineplayers: true
       mario.report: true
@@ -209,6 +218,9 @@ permissions:
     default: op
   mario.killradius:
     description: Rechte für den /killradius Command!
+    default: op
+  mario.msg:
+    description: Rechte für den /message und /reply Command!
     default: op
   mario.night:
     description: Rechte für den /night Command!

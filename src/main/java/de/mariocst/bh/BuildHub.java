@@ -14,12 +14,15 @@ import de.mariocst.bh.scoreboard.DeathScoreboard;
 import de.mariocst.bh.webhook.*;
 import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public final class BuildHub extends JavaPlugin {
@@ -44,6 +47,8 @@ public final class BuildHub extends JavaPlugin {
     private Spawn spawn;
     private StatusData statusData;
     private WebLink webLink;
+
+    public Map<CommandSender, CommandSender> lastMessagedPlayer = new HashMap<>();
 
     @Override
     public void onLoad() {
@@ -176,7 +181,10 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("coords")).setExecutor(new CoordsCommand());
         Objects.requireNonNull(this.getCommand("coords")).setTabCompleter(new CoordsCommand());
         Objects.requireNonNull(this.getCommand("kickall")).setExecutor(new KickAllCommand());
+        Objects.requireNonNull(this.getCommand("message")).setExecutor(new MessageCommand());
+        Objects.requireNonNull(this.getCommand("message")).setTabCompleter(new MessageCommand());
         Objects.requireNonNull(this.getCommand("onlineplayers")).setExecutor(new OnlinePlayersCommand());
+        Objects.requireNonNull(this.getCommand("reply")).setExecutor(new ReplyCommand());
         Objects.requireNonNull(this.getCommand("report")).setExecutor(new ReportCommand());
         Objects.requireNonNull(this.getCommand("report")).setTabCompleter(new ReportCommand());
 
