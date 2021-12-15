@@ -62,14 +62,7 @@ public class DeathData {
 
         if (this.shouldDisplayScoreboard) {
             for (Player player : BuildHub.getInstance().getServer().getOnlinePlayers()) {
-                Scoreboard scoreboard = BuildHub.getInstance().getServer().getScoreboardManager().getNewScoreboard();
-                player.setScoreboard(scoreboard);
-                new DeathScoreboard(Component.text("§cTode"), scoreboard);
-            }
-        }
-        else {
-            for (Player player : BuildHub.getInstance().getServer().getOnlinePlayers()) {
-                player.setScoreboard(BuildHub.getInstance().getServer().getScoreboardManager().getNewScoreboard());
+                player.sendMessage(BuildHub.getInstance().getPrefix() + "Das Plugin wurde reloaded. Wenn ihr keine Berechtigungen für /scoreboard habt, müsst ihr rejoinen.");
             }
         }
 

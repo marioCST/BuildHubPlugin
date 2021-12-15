@@ -116,6 +116,7 @@ public final class BuildHub extends JavaPlugin {
         this.discordConfig = new DiscordConfig();
         this.statusConfig = new StatusConfig();
 
+        this.prefixData = new Prefix(); // Prefix should be loaded first
         this.baseData = new BaseData();
         this.coordsData = new CoordsData();
         this.statusData = new StatusData(); // NEEDS to be loaded before DeathData
@@ -123,7 +124,6 @@ public final class BuildHub extends JavaPlugin {
         this.discordConfigData = new DiscordConfigData();
         this.discordLink = new DiscordLink();
         this.fireballData = new FireballData();
-        this.prefixData = new Prefix();
         this.spawn = new Spawn();
         this.webLink = new WebLink();
     }

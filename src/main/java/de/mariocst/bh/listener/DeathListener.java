@@ -40,8 +40,7 @@ public class DeathListener implements Listener {
                 .append(player.name()));
 
         if (DeathData.getDeathData().shouldDisplayDeaths()) {
-            player.displayName(player.displayName()
-                    .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+            player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
             player.playerListName(player.playerListName()
                     .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));

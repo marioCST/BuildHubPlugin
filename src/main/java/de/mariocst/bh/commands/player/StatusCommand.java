@@ -36,8 +36,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§4Aufnahme§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -52,8 +51,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§1Bauen§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -68,8 +66,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§eHilfe§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -84,8 +81,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§cLive§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -100,8 +96,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§4Redstone§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -116,8 +111,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(Component.text("§0[§6Verzweifelt§0]").append(Component.text(" ")).append(player.name()));
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
@@ -132,8 +126,7 @@ public class StatusCommand implements CommandExecutor, TabCompleter {
                             player.playerListName(player.name());
 
                             if (DeathData.getDeathData().shouldDisplayDeaths()) {
-                                player.displayName(player.displayName()
-                                        .append(Component.text("\nTode: §e" + DeathData.getDeathData().getDeaths(player))));
+                                player.setCustomName(player.getName() + "\nTode: §e" + DeathData.getDeathData().getDeaths(player));
 
                                 player.playerListName(player.playerListName()
                                         .append(Component.text(" §e" + DeathData.getDeathData().getDeaths(player))));
