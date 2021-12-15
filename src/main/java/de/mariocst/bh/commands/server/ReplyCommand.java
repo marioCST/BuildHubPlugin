@@ -32,11 +32,11 @@ public class ReplyCommand implements CommandExecutor {
                             sender.sendMessage(BuildHub.getInstance().getPrefix() + "§6Du -> " + t.getName() + " §8» §f" + msg.toString().replaceAll("&", "§"));
                         }
                         else {
-                            sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
+                            sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + BuildHub.getInstance().lastMessagedPlayer.get(sender).getName() + " existiert aus irgendeinem Grund nicht!");
                         }
                     }
                     catch (NullPointerException e) {
-                        sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
+                        sender.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + BuildHub.getInstance().lastMessagedPlayer.get(sender).getName() + " existiert aus irgendeinem Grund nicht!");
                     }
                 }
                 else {
@@ -83,12 +83,12 @@ public class ReplyCommand implements CommandExecutor {
                             player.sendMessage(BuildHub.getInstance().getPrefix() + "§6Du -> " + t.getName() + " §8» §f" + msg.toString().replaceAll("&", "§"));
                         }
                         else {
-                            player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
+                            player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + BuildHub.getInstance().lastMessagedPlayer.get(player).getName() + " existiert aus irgendeinem Grund nicht!");
                             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                         }
                     }
                     catch (NullPointerException e) {
-                        player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + args[0] + " existiert nicht!");
+                        player.sendMessage(BuildHub.getInstance().getPrefix() + "Der Spieler " + BuildHub.getInstance().lastMessagedPlayer.get(player).getName() + " existiert aus irgendeinem Grund nicht!");
                         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1.0f, 1.0f);
                     }
                 }
