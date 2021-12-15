@@ -1,4 +1,4 @@
-#BuildHub Plugin für Paper 1.18.1
+BuildHub Plugin für Paper 1.18.1
 
 Minecraft Version: 1.18.1
 
