@@ -118,13 +118,13 @@ public final class BuildHub extends JavaPlugin {
 
         this.baseData = new BaseData();
         this.coordsData = new CoordsData();
+        this.statusData = new StatusData(); // NEEDS to be loaded before DeathData
         this.deathData = new DeathData();
         this.discordConfigData = new DiscordConfigData();
         this.discordLink = new DiscordLink();
         this.fireballData = new FireballData();
         this.prefixData = new Prefix();
         this.spawn = new Spawn();
-        this.statusData = new StatusData();
         this.webLink = new WebLink();
     }
 
