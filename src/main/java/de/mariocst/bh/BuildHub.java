@@ -139,6 +139,7 @@ public final class BuildHub extends JavaPlugin {
         pluginManager.registerEvents(new DeathListener(), this);
         pluginManager.registerEvents(new FireballListener(), this);
         pluginManager.registerEvents(new JoinListener(), this);
+        pluginManager.registerEvents(new NavigatorListener(), this);
         pluginManager.registerEvents(new ProtectListener(), this);
         pluginManager.registerEvents(new ServerListPingListener(), this);
     }
@@ -199,6 +200,7 @@ public final class BuildHub extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("forceloadchunk")).setTabCompleter(new ForceLoadChunkCommand());
         Objects.requireNonNull(this.getCommand("getentities")).setExecutor(new GetEntitesCommand());
         Objects.requireNonNull(this.getCommand("killradius")).setExecutor(new KillRadiusCommand());
+        Objects.requireNonNull(this.getCommand("navigator")).setExecutor(new NavigatorCommand());
         Objects.requireNonNull(this.getCommand("night")).setExecutor(new NightCommand());
         Objects.requireNonNull(this.getCommand("setspawn")).setExecutor(new SetSpawnCommand());
         Objects.requireNonNull(this.getCommand("spawn")).setExecutor(new SpawnCommand());
