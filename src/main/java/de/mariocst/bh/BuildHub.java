@@ -135,6 +135,7 @@ public final class BuildHub extends JavaPlugin {
     private void listenerRegistration() {
         PluginManager pluginManager = this.getServer().getPluginManager();
 
+        pluginManager.registerEvents(new AnvilListener(), this);
         pluginManager.registerEvents(new BlockBreakListener(), this);
         pluginManager.registerEvents(new DeathListener(), this);
         pluginManager.registerEvents(new FireballListener(), this);
