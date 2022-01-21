@@ -15,8 +15,10 @@ public class ProtectListener implements Listener {
 
         if (player.hasPermission("mario.protect.break") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) return;
 
-        if (event.getBlock().getX() <= -753 && event.getBlock().getX() >= -783
-                && event.getBlock().getZ() <= 423 && event.getBlock().getZ() >= 391) {
+        if (!player.getWorld().getName().equals("BH3")) return;
+
+        if (event.getBlock().getX() <= -133 && event.getBlock().getX() >= -214
+                && event.getBlock().getZ() <= 153 && event.getBlock().getZ() >= 44) {
             event.setCancelled(true);
             player.sendMessage(BuildHub.getInstance().getPrefix() + "§cDu darfst hier nicht abbauen!");
         }
@@ -28,8 +30,10 @@ public class ProtectListener implements Listener {
 
         if (player.hasPermission("mario.protect.place") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) return;
 
-        if (event.getBlock().getX() <= -753 && event.getBlock().getX() >= -783
-                && event.getBlock().getZ() <= 423 && event.getBlock().getZ() >= 391) {
+        if (!player.getWorld().getName().equals("BH3")) return;
+
+        if (event.getBlock().getX() <= -133 && event.getBlock().getX() >= -214
+                && event.getBlock().getZ() <= 153 && event.getBlock().getZ() >= 44) {
             event.setCancelled(true);
             player.sendMessage(BuildHub.getInstance().getPrefix() + "§cDu darfst hier nicht bauen!");
         }
@@ -41,8 +45,10 @@ public class ProtectListener implements Listener {
 
         if (player.hasPermission("mario.protect.itemframe") || player.hasPermission("mario.*") || player.hasPermission("*") || player.isOp()) return;
 
-        if (event.getItemFrame().getLocation().getX() <= -753 && event.getItemFrame().getLocation().getX() >= -783
-                && event.getItemFrame().getLocation().getZ() <= 423 && event.getItemFrame().getLocation().getZ() >= 391) {
+        if (!player.getWorld().getName().equals("BH3")) return;
+
+        if (event.getItemFrame().getLocation().getX() <= -133 && event.getItemFrame().getLocation().getX() >= -214
+                && event.getItemFrame().getLocation().getZ() <= 153 && event.getItemFrame().getLocation().getZ() >= 44) {
             event.setCancelled(true);
             player.sendMessage(BuildHub.getInstance().getPrefix() + "§cDu darfst hier nicht mit Item Frames interagieren!");
         }
